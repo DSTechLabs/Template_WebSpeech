@@ -1,0 +1,93 @@
+<!doctype html>
+<!--=======================================================
+//
+//     FILE : index.html
+//
+//  PROJECT : Web Speech Template
+//            https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
+//
+//   AUTHOR : Bill Daniels
+//            Copyright 2024, D+S Tech Labs, Inc.
+//            MIT License
+//
+//======================================================-->
+
+<html lang="en-us">
+
+  <!-- Head -->
+  <head>
+
+    <!-- These three meta tags MUST come first in the <head> tag. -->
+    <!-- All other <head> content must come AFTER these tags.     -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Web Speech Template</title>
+
+    <style>
+
+      body
+      {
+        margin           : 0;
+        padding          : 0;
+        min-height       : 100vh;
+        color            : #FFFFFF;
+        background-color : #202030;
+        text-align       : center;
+      }
+
+      #dataWindow
+      {
+        display  : inline-block;
+        padding  : 0.5vh 0.5vw;
+        width    : 80vw;
+        height   : 30vh;
+        overflow : auto;
+
+        color            : #008000;
+        background-color : #202020;
+        border           : 0.2vw inset #505050;
+
+        font-family : monospace, sans-serif;
+        font-size   : large;
+
+        text-align : left;
+      }
+
+    </style>
+
+  </head>
+
+
+  <!-- Body -->
+  <body>
+
+    <h1>Web Speech Template</h1>
+    <br>
+
+    <h2><u>Speech to Text:</u></h2>
+
+    <div id="dataWindow"></div><br>
+    <br>
+
+    <h2><u>Text to Speech:</u></h2>
+
+    <div style="display:inline-block; font-size:x-large; line-height:1.5; text-align:right">
+
+      Select Voice: <select id="voiceList" style="width:50vw; font-size:inherit"></select><br>
+      Select Pitch: <input  id="pitch"     style="width:50vw; font-size:inherit" type="range" min="0.0" max="2.0"  value="1.0" step="0.1" /><br>
+      Select Rate:  <input  id="rate"      style="width:50vw; font-size:inherit" type="range" min="0.1" max="10.0" value="1.0" step="0.1" /><br>
+      <br>
+
+      Enter text to speak: <input id="textToSpeak" type="text" style="width:50vw; font-size:inherit" onkeydown="if (event.keyCode==13) speakIt(this)" /><br>
+      <small><i>Press [Enter] to speak &nbsp; &nbsp; </i></small><br>
+
+    </div>
+    <br>
+
+    <script src="webSpeech.js"></script>
+
+  </body>
+
+</html>
